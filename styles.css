@@ -1,0 +1,485 @@
+/* =========================================================
+   Nourisha — Halaman Login
+   Token warna: plum (primer) · blush (sekunder) · ink (teks)
+   Tipografi: Poppins (display + body)
+   ========================================================= */
+
+:root {
+  /* Warna */
+  --plum-900: #6d2352;
+  --plum-700: #9c3a74;
+  --plum-600: #b34e89;
+  --plum-500: #c2689c;
+  --blush-100: #fbe9f1;
+  --blush-50: #fdf4f8;
+  --ink-900: #1b181b;
+  --ink-700: #3d3539;
+  --ink-500: #6f6369;
+  --ink-300: #9c9096;
+  --line: #f0dfe7;
+  --line-soft: #f6ecf1;
+  --paper: #ffffff;
+  --canvas: #f2eeec;
+
+  /* Tipografi */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Radius & bayangan */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --shadow-card: 0 1px 2px rgba(27, 24, 27, 0.04), 0 12px 28px -18px rgba(109, 35, 82, 0.28);
+  --shadow-phone: 0 40px 80px -40px rgba(27, 24, 27, 0.55), 0 0 0 1px rgba(27, 24, 27, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  font-family: var(--font-sans);
+  color: var(--ink-900);
+  background:
+    radial-gradient(120% 90% at 50% 0%, #fbf8f7 0%, var(--canvas) 60%, #e9e3e1 100%);
+}
+
+/* ---------- Cangkang perangkat ---------- */
+
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 412px;
+  padding: 10px;
+  border-radius: 46px;
+  background: #16111a;
+  box-shadow: var(--shadow-phone);
+}
+
+.screen {
+  position: relative;
+  overflow: hidden auto;
+  border-radius: 36px;
+  background: var(--paper);
+  scrollbar-width: thin;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 26px 34px;
+  color: var(--paper);
+  background: linear-gradient(135deg, #a63d7b 0%, #b6548e 48%, #c86fa6 100%);
+}
+
+.hero__deco {
+  position: absolute;
+  top: -6px;
+  right: -46px;
+  width: 230px;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 26px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.badge__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #f6d7e6;
+}
+
+.hero h1 {
+  margin: 0 0 18px;
+  max-width: 15ch;
+  font-size: clamp(1.875rem, 8vw, 2.125rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+}
+
+.hero__lead {
+  margin: 0 0 18px;
+  max-width: 34ch;
+  font-size: 0.8125rem;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.hero__sub {
+  margin: 0;
+  max-width: 36ch;
+  font-size: 0.78125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ---------- Kartu formulir ---------- */
+
+.card {
+  position: relative;
+  padding: 22px 0 26px;
+  background: linear-gradient(180deg, #fdf3f7 0%, #fdf8fa 45%, #fdf8fa 100%);
+}
+
+/* garis putus-putus memisahkan hero dari kartu, seperti pada mockup */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--line);
+}
+
+.card__inner {
+  margin: 0 18px;
+  padding: 26px 22px 22px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-md);
+  background: var(--paper);
+  box-shadow: var(--shadow-card);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--plum-600);
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.018em;
+}
+
+.card__lead {
+  margin: 0 0 22px;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-500);
+}
+
+/* ---------- Pemilih peran ---------- */
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.segmented__btn {
+  padding: 11px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+  background: var(--blush-100);
+  color: var(--ink-900);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.segmented__btn:hover {
+  background: #f7dde9;
+}
+
+.segmented__btn.is-active {
+  background: linear-gradient(135deg, #b9578e 0%, #a5417a 100%);
+  color: #fff;
+  box-shadow: 0 8px 18px -12px rgba(109, 35, 82, 0.9);
+}
+
+.segmented__btn.is-active:hover {
+  background: linear-gradient(135deg, #c16195 0%, #ae4782 100%);
+}
+
+/* ---------- Field ---------- */
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field__label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-500);
+}
+
+.field__wrap {
+  position: relative;
+}
+
+.field__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--blush-50);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--ink-900);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.field__input::placeholder {
+  color: var(--ink-300);
+}
+
+.field__input:hover {
+  border-color: #e6cad9;
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--plum-500);
+  background: var(--paper);
+  box-shadow: 0 0 0 3px rgba(194, 104, 156, 0.18);
+}
+
+.field__input[aria-invalid="true"] {
+  border-color: #d4576f;
+  box-shadow: 0 0 0 3px rgba(212, 87, 111, 0.14);
+}
+
+.field__wrap .field__input {
+  padding-right: 46px;
+}
+
+.field__toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--plum-600);
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.field__toggle:hover {
+  background: var(--blush-100);
+  color: var(--plum-700);
+}
+
+.field__toggle .icon--eye-off {
+  display: none;
+}
+
+.field__toggle[aria-pressed="true"] .icon--eye {
+  display: none;
+}
+
+.field__toggle[aria-pressed="true"] .icon--eye-off {
+  display: block;
+}
+
+.field__error {
+  margin: 0;
+  font-size: 0.71875rem;
+  color: #c33c56;
+}
+
+/* ---------- Tombol kirim ---------- */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 46px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: linear-gradient(135deg, #b9578e 0%, #a5417a 100%);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  cursor: pointer;
+  box-shadow: 0 14px 26px -16px rgba(109, 35, 82, 0.95);
+  transition: transform 0.16s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 18px 30px -16px rgba(109, 35, 82, 0.95);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn__label {
+  transition: opacity 0.16s ease;
+}
+
+.btn__spinner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spin 0.7s linear infinite;
+}
+
+.btn.is-loading .btn__label {
+  opacity: 0;
+}
+
+.btn.is-loading .btn__spinner {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form__status {
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--blush-50);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+
+.form__status.is-error {
+  border-color: #f0ccd4;
+  background: #fdf3f5;
+  color: #b2374f;
+}
+
+/* ---------- Bantuan & hak cipta ---------- */
+
+.help {
+  margin: 20px 0 0;
+  font-size: 0.71875rem;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--ink-500);
+}
+
+.help a {
+  color: var(--plum-600);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.help a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin: 14px 0 0;
+  font-size: 0.6875rem;
+  text-align: center;
+  color: var(--ink-300);
+}
+
+/* ---------- Fokus keyboard ---------- */
+
+:where(button, a, input):focus-visible {
+  outline: 2px solid var(--plum-600);
+  outline-offset: 2px;
+}
+
+.field__input:focus-visible {
+  outline: none;
+}
+
+/* ---------- Layar penuh di perangkat kecil ---------- */
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    align-items: stretch;
+    background: var(--paper);
+  }
+
+  .phone {
+    max-width: none;
+    padding: 0;
+    border-radius: 0;
+    background: var(--paper);
+    box-shadow: none;
+  }
+
+  .screen {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .card__inner {
+    margin: 0 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

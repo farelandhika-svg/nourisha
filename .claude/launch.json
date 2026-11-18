@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nourisha-login",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".preview-server.cjs"],
+      "port": 4321
+    }
+  ]
+}

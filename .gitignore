@@ -1,0 +1,35 @@
+# Dependensi & build
+node_modules/
+dist/
+build/
+.vite/
+
+# Log
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Editor & OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Deployment
+.vercel/
+.netlify/
+
+# Catatan lokal
+*.local
